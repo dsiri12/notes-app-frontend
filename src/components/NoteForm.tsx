@@ -1,22 +1,6 @@
 import { useState, type ChangeEvent } from "react";
 import type { NoteFormDataType, NoteType } from "../types/NoteFormDataType";
 
-
-
-// const initData: NoteFormDataType = {
-//   title: "",
-//   priority: "Medium",
-//   category: "Work",
-//   description: "",
-// }
-
-// const initData = {
-//   title: "",
-//   priority: "Medium",
-//   category: "Work",
-//   description: "",
-// } as NoteFormDataType
-
 const initData = {
   title: "",
   priority: "Medium",
@@ -41,8 +25,10 @@ const NoteForm = ({addNote}: Props) => {
   const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+	// validation
     if (!formData.title || !formData.description) return;
 
+	// create new note
     const newNote = { id: Date.now(), ...formData };
 
     addNote(newNote);

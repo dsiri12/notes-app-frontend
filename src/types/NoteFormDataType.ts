@@ -5,16 +5,4 @@ export type NoteFormDataType = {
   description: string;
 };
 
-
 export type NoteType = NoteFormDataType & {id: number}
-
-// export type NoteFormDataType = {
-//   title: string;
-//   priority: "High" | "Medium" | "Low";
-//   category: "Work" | "Personal" | "Ideas";
-//   description: string;
-// };
-
-// export type NoteType = NoteFormDataType & {
-//   id: number;
-// };
