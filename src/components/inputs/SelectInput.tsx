@@ -1,4 +1,5 @@
 import type { ChangeEvent } from "react";
+import type { LabelValueType } from "../../types/commonsTypes";
 
 type Props = {
   label: string;
@@ -10,7 +11,7 @@ type Props = {
       Element
     >,
   ) => void;
-  options: { value: string; label: string; }[];
+  options: LabelValueType[];
 };
 
 const SelectInput = ({label, name, value, onChange, options}: Props) => {
