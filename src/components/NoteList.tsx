@@ -3,9 +3,10 @@ import NoteDetails from "./NoteDetails";
 
 type Props = {
   notes: NoteType[];
+  deleteNote: (id: number) => void;
 };
 
-const NoteList = ({ notes }: Props) => {
+const NoteList = ({ notes, deleteNote }: Props) => {
   if (notes.length === 0) {
     return <p className="text-center text-gray-500">No Notes Yet</p>;
   }
@@ -13,7 +14,7 @@ const NoteList = ({ notes }: Props) => {
   return (
     <div className="space-y-4">
       {notes.map((note) => (
-        <NoteDetails key={note.id} note={note} />
+        <NoteDetails key={note.id} note={note} deleteNote={deleteNote}/>
       ))}
     </div>
   );
