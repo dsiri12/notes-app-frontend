@@ -11,7 +11,14 @@ const App = () => {
   };
 
   const deleteNote = (id: number) => {
-    setNotes(notes.filter((note) => note.id !== id))
+    const toDelete = notes.find((note) => note.id === id)
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete this note (title: ${toDelete?.title}) ?`
+    );
+
+    if (confirmDelete) {
+      setNotes(notes.filter((note) => note.id !== id));
+    }
   }
 
   return (
