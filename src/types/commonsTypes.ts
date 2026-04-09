@@ -1,1 +1,1 @@
-export type LabelValueType = { value: string; label: string; }
+export type LabelValueType = { value: string; label: string };

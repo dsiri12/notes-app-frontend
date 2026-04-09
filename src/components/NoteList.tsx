@@ -1,12 +1,11 @@
-import type { NoteType } from "../types/NoteFormDataType";
+import { useGetNotes } from "../hooks/useGetNotes";
 import NoteDetails from "./NoteDetails";
 
-type Props = {
-  notes: NoteType[];
-  deleteNote: (id: number) => void;
-};
+const NoteList = () => {
+  const {data: notes} = useGetNotes()
 
-const NoteList = ({ notes, deleteNote }: Props) => {
+  if (!notes) { return }
+
   if (notes.length === 0) {
     return <p className="text-center text-gray-500">No Notes Yet</p>;
   }
@@ -14,7 +13,7 @@ const NoteList = ({ notes, deleteNote }: Props) => {
   return (
     <div className="space-y-4">
       {notes.map((note) => (
-        <NoteDetails key={note.id} note={note} deleteNote={deleteNote}/>
+        <NoteDetails key={note.id} note={note} />
       ))}
     </div>
   );
