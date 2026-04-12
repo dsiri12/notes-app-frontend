@@ -46,7 +46,7 @@ const NoteDetails = ({ note }: Props) => {
       <p className="mt-2">{description}</p>
 
       <button
-        onClick={() => deleteNote()}
+        onClick={deleteNote}
         className="mt-3 text-red-500 cursor-pointer transition hover:text-red-700"
       >
         🗑️ Delete
